@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 
 function App() {
 
-  const nome = "pedro"
+  const nome = "henrique"
   let [nomeDigitado, setNomeDigitado] = useState('');
 
   const inputRef = useRef([]);
@@ -30,8 +30,12 @@ function App() {
     }
   }
 
-  const ganhou = () => {
+  useEffect(() => {
     console.log(nomeDigitado)
+  }, [nomeDigitado])
+
+  const ganhou = () => {
+    
     if (nomeDigitado === nome) {
       alert('Você ganhou!');
     }
